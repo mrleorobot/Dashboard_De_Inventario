@@ -749,10 +749,7 @@ export default function InventoryDashboard() {
   return (
     <TooltipProvider>
       <div className="min-h-screen bg-[#06060a] text-white overflow-x-hidden">
-        
-        {/* Aviso de Projeto Demonstrativo */}
       
-
         {/* Animated Background */}
         <div className="fixed inset-0 -z-10 mt-10">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),rgba(0,0,0,0))]" />
