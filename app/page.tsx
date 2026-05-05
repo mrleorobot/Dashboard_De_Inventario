@@ -749,8 +749,14 @@ export default function InventoryDashboard() {
   return (
     <TooltipProvider>
       <div className="min-h-screen bg-[#06060a] text-white overflow-x-hidden">
+        
+        {/* Aviso de Projeto Demonstrativo */}
+        <div className="bg-slate-900 text-slate-50 text-center py-2 text-sm font-medium z-50 relative">
+          👋 Olá! Vale lembrar que este é um projeto demonstrativo.
+        </div>
+
         {/* Animated Background */}
-        <div className="fixed inset-0 -z-10">
+        <div className="fixed inset-0 -z-10 mt-10">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),rgba(0,0,0,0))]" />
           <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] animate-pulse" />
           <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-violet-500/5 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "1s" }} />
@@ -850,7 +856,7 @@ export default function InventoryDashboard() {
         {/* Header */}
         <motion.header 
           style={{ opacity: headerOpacity }}
-          className="sticky top-0 z-50 border-b border-white/5 bg-[#06060a]/80 backdrop-blur-2xl"
+          className="sticky top-0 z-40 border-b border-white/5 bg-[#06060a]/80 backdrop-blur-2xl"
         >
           <div className="mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <div className="flex items-center justify-between gap-4">
@@ -1186,9 +1192,9 @@ export default function InventoryDashboard() {
                         labelStyle={{ color: '#fff', fontWeight: 600 }}
                         formatter={(value: number) => [`R$ ${value?.toLocaleString()}`, '']}
                       />
-                      <Area type="monotone" dataKey="vendas" stroke="#3b82f6" strokeWidth={2.5} fillOpacity={1} fill="url(#colorVendas)" />
-                      <Area type="monotone" dataKey="previsao" stroke="#a78bfa" strokeWidth={2} strokeDasharray="6 4" fillOpacity={1} fill="url(#colorPrevisao)" />
-                      <Area type="monotone" dataKey="meta" stroke="#10b981" strokeWidth={1.5} strokeDasharray="4 4" fillOpacity={0} />
+                      <Area type="monotone" dataKey="vendas" stroke="#3b82f6" strokeWidth={2.5} fillOpacity={1} fill="url(#colorVendas)" isAnimationActive={true} animationDuration={2000} animationEasing="ease-out" />
+                      <Area type="monotone" dataKey="previsao" stroke="#a78bfa" strokeWidth={2} strokeDasharray="6 4" fillOpacity={1} fill="url(#colorPrevisao)" isAnimationActive={true} animationDuration={2000} animationEasing="ease-out" />
+                      <Area type="monotone" dataKey="meta" stroke="#10b981" strokeWidth={1.5} strokeDasharray="4 4" fillOpacity={0} isAnimationActive={true} animationDuration={2000} animationEasing="ease-out" />
                     </AreaChart>
                   </ResponsiveContainer>
                 </div>
@@ -1427,7 +1433,7 @@ export default function InventoryDashboard() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.05 }}
-                      className="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all group cursor-pointer"
+                      className="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-blue-500/10 group cursor-pointer"
                     >
                       <div className="flex items-center justify-between mb-3">
                         <div className="p-2 rounded-lg" style={{ backgroundColor: `${cat.fill}15` }}>
