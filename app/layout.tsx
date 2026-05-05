@@ -43,6 +43,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-[#06060a]">
       <body className="font-sans antialiased bg-[#06060a]">
+        <div className="bg-slate-900 text-slate-50 text-center py-2 text-sm font-medium">
+  👋 Olá! Vale lembrar que este é um projeto demonstrativo.
+        </div>
+        
         {children}
         <Toaster 
           theme="dark" 
