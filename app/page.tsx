@@ -752,7 +752,7 @@ export default function InventoryDashboard() {
         
         {/* Aviso de Projeto Demonstrativo */}
         <div className="bg-slate-900 text-slate-50 text-center py-2 text-sm font-medium z-50 relative">
-          👋 Olá! Vale lembrar que este é um projeto demonstrativo.
+           Olá! Vale lembrar que este é um projeto demonstrativo.
         </div>
 
         {/* Animated Background */}
