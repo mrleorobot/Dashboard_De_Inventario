@@ -38,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-slate-50">
-      <body className="font-sans antialiased">
+    <html lang="en" className="bg-[#0a0a0f]">
+      <body className="font-sans antialiased bg-[#0a0a0f]">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
