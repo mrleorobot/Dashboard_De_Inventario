@@ -749,7 +749,12 @@ export default function InventoryDashboard() {
   return (
     <TooltipProvider>
       <div className="min-h-screen bg-[#06060a] text-white overflow-x-hidden">
-      
+        
+        {/* Aviso de Projeto Demonstrativo */}
+        <div className="bg-slate-900 text-slate-50 text-center py-2 text-sm font-medium z-50 relative">
+          👋 Olá! Vale lembrar que este é um projeto demonstrativo.
+        </div>
+
         {/* Animated Background */}
         <div className="fixed inset-0 -z-10 mt-10">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),rgba(0,0,0,0))]" />
@@ -1588,13 +1593,16 @@ export default function InventoryDashboard() {
                                   <Button
                                     variant="ghost"
                                     size="icon"
-                                    className="h-8 w-8 rounded-lg hover:bg-red-500/10 hover:text-red-400"
+                                    className="h-8 w-8 rounded-lg hover:bg-red-500/10 hover:text-red-400 disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed"
                                     onClick={() => openDeleteDialog(product)}
+                                    disabled={product.id <= 12}
                                   >
                                     <Trash2 className="h-4 w-4" />
                                   </Button>
                                 </TooltipTrigger>
-                                <TooltipContent>Remover produto</TooltipContent>
+                                <TooltipContent>
+                                  {product.id <= 12 ? "Item protegido" : "Remover produto"}
+                                </TooltipContent>
                               </Tooltip>
                             </div>
                           </TableCell>
