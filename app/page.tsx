@@ -749,11 +749,6 @@ export default function InventoryDashboard() {
   return (
     <TooltipProvider>
       <div className="min-h-screen bg-[#06060a] text-white overflow-x-hidden">
-        
-        {/* Aviso de Projeto Demonstrativo */}
-        <div className="bg-slate-900 text-slate-50 text-center py-2 text-sm font-medium z-50 relative">
-          👋 Olá! Vale lembrar que este é um projeto demonstrativo.
-        </div>
 
         {/* Animated Background */}
         <div className="fixed inset-0 -z-10 mt-10">
