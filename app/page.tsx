@@ -419,6 +419,8 @@ const shimmer = "before:absolute before:inset-0 before:-translate-x-full before:
 
 export default function InventoryDashboard() {
   const [products, setProducts] = useState<Product[]>(initialProducts)
+  const [isLoading, setIsLoading] = useState(true);
+  const [isInfoOpen, setIsInfoOpen] = useState(false);
   const [notifications, setNotifications] = useState<Notification[]>(initialNotifications)
   const [searchTerm, setSearchTerm] = useState("")
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false)
@@ -884,6 +886,9 @@ export default function InventoryDashboard() {
                     <span className="text-xs text-slate-500 tabular-nums">
                       {currentTime.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}
                     </span>
+                    <button onClick={() => setIsInfoOpen(true)} className="flex items-center gap-1 text-[10px] text-slate-500 hover:text-blue-400 transition-colors ml-2">
+                    <HelpCircle className="h-3 w-3" /> Sobre os Dados
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1035,7 +1040,13 @@ export default function InventoryDashboard() {
                     <div className="flex items-start justify-between mb-6">
                       <div>
                         <p className="text-sm font-medium text-slate-400">Receita Mensal</p>
-                        <p className="text-xs text-slate-600 mt-0.5">Maio 2026 • RN</p>
+                       {isLoading ? (
+  <Skeleton className="h-10 w-3/4 mt-2 bg-white/5" />
+) : (
+  <p className="text-4xl font-bold text-white tracking-tight">
+    {formatCurrency(totalRevenue)}
+  </p>
+)}
                       </div>
                       <div className="p-2.5 rounded-xl bg-gradient-to-br from-blue-500/20 to-violet-500/20 ring-1 ring-blue-500/20">
                         <DollarSign className="h-5 w-5 text-blue-400" />
@@ -1937,6 +1948,28 @@ export default function InventoryDashboard() {
           </DialogContent>
         </Dialog>
       </div>
+      <Dialog open={isInfoOpen} onOpenChange={setIsInfoOpen}>
+  <DialogContent className="bg-[#0a0a0f] border-white/10 text-white max-w-md shadow-2xl">
+    <DialogHeader>
+      <DialogTitle className="flex items-center gap-2 text-blue-400 text-xl font-bold">
+        <Globe className="h-6 w-6" /> Mercado E-commerce RN
+      </DialogTitle>
+      <div className="text-slate-400 pt-4 space-y-4 text-sm">
+        <p>Dashboard focado em <strong>UX/UI moderna</strong> com microinterações e transições fluidas.</p>
+        <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-3">
+          <h4 className="text-white font-bold text-sm">Contexto RN 2024:</h4>
+          <ul className="text-xs space-y-2">
+            <li>• Faturamento estadual de <strong>R$ 2,3 bilhões</strong>.</li>
+            <li>• Crescimento real de 9.5%.</li>
+          </ul>
+        </div>
+      </div>
+    </DialogHeader>
+    <DialogFooter className="mt-4">
+      <Button onClick={() => setIsInfoOpen(false)} className="w-full bg-blue-600">Entendido</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
     </TooltipProvider>
   )
 }
