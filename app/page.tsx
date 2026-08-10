@@ -82,6 +82,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Progress } from "@/components/ui/progress"
+import { Skeleton } from "@/components/ui/skeleton"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -751,7 +752,7 @@ export default function InventoryDashboard() {
 
   return (
     <TooltipProvider>
-      <div className="min-h-screen bg-[#06060a] text-white overflow-x-hidden">
+      <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
 
         {/* Animated Background */}
         <div className="fixed inset-0 -z-10 mt-10">

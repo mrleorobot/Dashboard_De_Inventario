@@ -41,9 +41,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-[#06060a]">
-      <body className="font-sans antialiased bg-[#06060a]">
-        <div className="bg-slate-900 text-slate-50 text-center py-2 text-sm font-medium">
+    <html lang="pt-BR" className="bg-background">
+      <body className="font-sans antialiased bg-background">
+        <div className="border-b border-border bg-card text-muted-foreground text-center py-2 text-xs font-medium tracking-wide">
    Olá! Vale lembrar que este é um projeto demonstrativo.
         </div>
         
