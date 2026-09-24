@@ -1,29 +1,54 @@
-<div align="center">
-  <h1>DashBoard de Inventário</h1>
-  <p>Painel de controle de estoque com alertas inteligentes de produtos em baixa, analytics em tempo real de vendas e exportação automatizada de relatórios.</p>
-  <p><strong>Reduziu perdas por falta de produto em 40%.</strong></p>
-</div>
+# Dashboard de Inventário
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Next.js-333333?style=flat-square&logo=next" /> <img src="https://img.shields.io/badge/TypeScript-333333?style=flat-square&logo=typescript" /> <img src="https://img.shields.io/badge/Tailwind-333333?style=flat-square&logo=tailwind" />
-</div>
+Painel de estoque com cadastro de produtos, filtros, indicadores e exportação de relatórios. Projeto de interface desenvolvido com Next.js, React e TypeScript.
 
-<br>
+[Visualizar projeto](https://dashboard-de-inventario.vercel.app) · [Portfólio](https://mrleorobot.github.io/)
 
-## 🚀 Sobre
+## Recursos
 
-Painel de controle de estoque com alertas inteligentes de produtos em baixa, analytics em tempo real de vendas e exportação automatizada de relatórios.
+- Cadastro, edição e exclusão de produtos na interface.
+- Busca e filtros para consultar o inventário.
+- Indicadores e gráficos de estoque e vendas.
+- Alertas visuais para produtos com estoque baixo.
+- Exportação de relatórios em CSV, Excel e PDF.
 
-**Resultado:** Reduziu perdas por falta de produto em 40%.
+A versão atual inicia com dados definidos em `app/page.tsx` e mantém as alterações no estado React da sessão. Isso permite explorar o painel como demonstração.
 
-## 🛠️ Tecnologias
+## Tecnologias
 
-Next.js, TypeScript, Tailwind
+Next.js, React, TypeScript, Tailwind CSS, Framer Motion, Recharts, SheetJS e jsPDF.
 
-## 📁 Repositório
+## Executar localmente
 
-Parte do portfólio de <a href="https://mrleorobot.github.io">Leonilson Souza</a>.
+Requisitos: Node.js e pnpm.
 
-## 📝 Licença
+```bash
+git clone https://github.com/mrleorobot/Dashboard_De_Inventario.git
+cd Dashboard_De_Inventario
+pnpm install
+pnpm dev
+```
+
+Abra o endereço exibido pelo servidor no terminal.
+
+Para gerar e servir a versão de produção:
+
+```bash
+pnpm build
+pnpm start
+```
+
+## Estrutura
+
+| Caminho | Conteúdo |
+| --- | --- |
+| [app/page.tsx](app/page.tsx) | Painel, dados iniciais, interações e exportações |
+| [components/](components/) | Componentes da interface |
+| [hooks/](hooks/) | Hooks auxiliares |
+| [lib/](lib/) | Utilitários |
+| [public/](public/) | Arquivos estáticos |
+| [package.json](package.json) | Dependências e comandos |
+
+## Licença
 
 MIT © Leonilson Souza
